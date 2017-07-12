@@ -31,7 +31,7 @@ html {
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%
 }
-body { margin: 0; }
+body { margin: 0; direction: rtl;}
 article, aside, details,
 figcaption, figure,
 footer, header,
@@ -100,6 +100,42 @@ td, th{ padding: 0; }
 
 
 /* ==========================================================================
+   0. Fontfamily - Add Vazir fonts
+   ========================================================================== */
+
+/* Import the font file */
+@font-face {
+    font-family: "Vazir";
+    src:url("../fonts/Vazir.eot?v=1");
+    src:url("../fonts/Vazir.eot?v=1#iefix") format("embedded-opentype"),
+        url("../fonts/Vazir.woff?v=1") format("woff"),
+        url("../fonts/Vazir.ttf?v=1") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src:url("../fonts/Vazir-Bold.eot?v=1");
+    src:url("../fonts/Vazir-Bold.eot?v=1#iefix") format("embedded-opentype"),
+        url("../fonts/Vazir-Bold.woff?v=1") format("woff"),
+        url("../fonts/Vazir-Bold.ttf?v=1") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: "Vazir";
+    src:url("../fonts/Vazir-Light.eot?v=1");
+    src:url("../fonts/Vazir-Light.eot?v=1#iefix") format("embedded-opentype"),
+        url("../fonts/Vazir-Light.woff?v=1") format("woff"),
+        url("../fonts/Vazir-Light.ttf?v=1") format("truetype");
+    font-weight: lighter;
+    font-style: normal;
+}
+
+
+/* ==========================================================================
    1. Icons - Sets up the icon font and respective classes
    ========================================================================== */
 
@@ -147,7 +183,7 @@ td, th{ padding: 0; }
 .icon-facebook:before {
     content: "\f604";
 }
-.icon-arrow-left:before {
+.icon-arrow-right:before {
     content: "\f605";
 }
 .icon-stats:before {
@@ -155,7 +191,7 @@ td, th{ padding: 0; }
 }
 .icon-location:before {
     content: "\f607";
-    margin-left: -3px; /* Tracking fix */
+    margin-right: -3px; /* Tracking fix */
 }
 .icon-link:before {
     content: "\f608";
@@ -184,7 +220,7 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Merriweather", serif;
+    font-family: "Vazir", serif;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.75em;
@@ -211,7 +247,7 @@ h4, h5, h6 {
     color: #2E2E2E;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     text-rendering: geometricPrecision;
 }
 
@@ -261,21 +297,21 @@ p, ul, ol, dl {
 }
 
 ol, ul {
-    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 ol ol, ul ul,
 ul ol, ol ul {
     margin: 0 0 0.4em 0;
-    padding-left: 2em;
+    padding-right: 2em;
 }
 
 dl dt {
-    float: left;
+    float: right;
     width: 180px;
     overflow: hidden;
-    clear: left;
-    text-align: right;
+    clear: right;
+    text-align: left;
     text-overflow: ellipsis;
     white-space: nowrap;
     font-weight: 700;
@@ -283,7 +319,7 @@ dl dt {
 }
 
 dl dd {
-    margin-left: 200px;
+    margin-right: 200px;
     margin-bottom: 1em
 }
 
@@ -313,7 +349,7 @@ blockquote {
     box-sizing: border-box;
     margin: 1.75em 0 1.75em -2.2em;
     padding: 0 0 0 1.75em;
-    border-left: #4A4A4A 0.4em solid;
+    border-right: #4A4A4A 0.4em solid;
 }
 
 blockquote p {
@@ -405,7 +441,7 @@ table th,
 table td {
     padding: 8px;
     line-height: 20px;
-    text-align: left;
+    text-align: right;
     vertical-align: top;
     border-top: #EFEFEF 1px solid;
 }
@@ -451,7 +487,7 @@ textarea, select, input {
     padding: 6px 9px;
     margin: 0 0 5px 0;
     outline: 0;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Vazir', sans-serif;
     font-size: 1.6rem;
     font-weight: 100;
     line-height: 1.4em;
@@ -505,7 +541,7 @@ button {
     outline: none;
     text-decoration: none;
     color: #fff;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Vazir', sans-serif;
     font-size: 11px; /* Hacks targeting Firefox. */
     line-height: 13px; /* Hacks targeting Firefox. */
     font-weight: 300;
@@ -565,9 +601,9 @@ button {
 
 body.nav-opened .site-wrapper {
     overflow-x: hidden;
-    -webkit-transform: translate3D(-240px, 0, 0);
-        -ms-transform: translate3D(-240px, 0, 0);
-            transform: translate3D(-240px, 0, 0);
+    -webkit-transform: translate3D(240px, 0, 0);
+        -ms-transform: translate3D(240px, 0, 0);
+            transform: translate3D(240px, 0, 0);
     -webkit-transition: -webkit-transform 0.3s ease;
             transition: transform 0.3s ease;
 }
@@ -602,15 +638,15 @@ body.nav-opened .site-wrapper {
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Vazir', sans-serif;
 }
 
 /* Navigation */
 body.nav-opened .nav-cover {
     position: fixed;
     top: 0;
-    left: 0;
-    right: 240px;
+    right: 0;
+    left: 240px;
     bottom: 0;
     z-index: 200;
 }
@@ -618,14 +654,14 @@ body.nav-opened .nav-cover {
 .nav {
     position: fixed;
     top: 0;
-    right: 0;
+    left: 0;
     bottom: 0;
     z-index: 5;
     width: 240px;
     opacity: 0;
     background: #111;
     margin-bottom: 0;
-    text-align: left;
+    text-align: right;
     overflow-y: auto;
     -webkit-transition: -webkit-transform 0.5s ease,
                         opacity 0.3s ease 0.7s;
@@ -653,7 +689,7 @@ body.nav-opened .nav {
 .nav-title {
     position: absolute;
     top: 45px;
-    left: 30px;
+    right: 30px;
     font-size: 16px;
     font-weight: 100;
     text-transform: uppercase;
@@ -663,7 +699,7 @@ body.nav-opened .nav {
 .nav-close {
     position: absolute;
     top: 38px;
-    right: 25px;
+    left: 25px;
     width: 20px;
     height: 20px;
     padding: 0;
@@ -712,10 +748,10 @@ body.nav-opened .nav {
 
 .nav li:before {
     display: block;
-    float: right;
-    padding-right: 4%;
-    padding-left: 5px;
-    text-align: right;
+    float: left;
+    padding-left: 4%;
+    padding-right: 5px;
+    text-align: left;
     font-size: 1.2rem;
     vertical-align: bottom;
     color: #B8B8B8;
@@ -739,7 +775,7 @@ body.nav-opened .nav {
     display: inline-block;
     content: " .......................................................";
     color: rgba(255,255,255,0.2);
-    margin-left: 5px;
+    margin-right: 5px;
 }
 .nav .nav-current:before {
     color: #fff;
@@ -770,14 +806,14 @@ body.nav-opened .nav {
     display: block;
     position: absolute;
     bottom: 30px;
-    left: 30px;
     right: 30px;
+    left: 30px;
     height: 38px;
     padding: 0 20px;
     color: #111 !important; /* Overides `.nav a:link, .nav a:visited` colour */
     text-align: center;
     font-size: 12px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     text-transform: uppercase;
     text-decoration: none;
     line-height: 35px;
@@ -787,7 +823,7 @@ body.nav-opened .nav {
 }
 .subscribe-button:before {
     font-size: 9px;
-    margin-right: 6px;
+    margin-left: 6px;
 }
 
 
@@ -797,8 +833,8 @@ body.nav-opened .nav {
     position: absolute;
     z-index: 100;
     bottom: 45px;
-    left: 50%;
-    margin-left: -16px;
+    right: 50%;
+    margin-right: -16px;
     width: 34px;
     height: 34px;
     font-size: 34px;
@@ -829,8 +865,8 @@ body.nav-opened .nav {
     border-radius: 100%;
     position: absolute;
     bottom: 0;
-    left: 50%;
-    margin-left: -75px;
+    right: 50%;
+    margin-right: -75px;
     background: radial-gradient(ellipse at center,  rgba(0,0,0,0.15) 0%,rgba(0,0,0,0) 70%,rgba(0,0,0,0) 100%);
 }
 
@@ -842,10 +878,10 @@ body.nav-opened .nav {
     display: none
 }
 
-/* Appears in the top left corner of your home page */
+/* Appears in the top right corner of your home page */
 .blog-logo {
     display: block;
-    float: left;
+    float: right;
     background: none !important; /* Makes sure there is never a background */
     border: none !important; /* Makes sure there is never a border */
 }
@@ -865,7 +901,7 @@ body.nav-opened .nav {
     -moz-box-sizing: border-box;
     box-sizing: border-box;
     display: inline-block;
-    float: right;
+    float: left;
     height: 38px;
     padding: 0 15px;
     border-style: solid;
@@ -882,7 +918,7 @@ body.nav-opened .nav {
 .menu-button:before {
     font-size: 12px;
     font-weight: bold;
-    margin-right: 6px;
+    margin-left: 6px;
     position: relative;
     top: 1px;
 }
@@ -918,9 +954,9 @@ body.nav-opened .nav {
     background: #111;
     border-color: #111;
     color: #fff;
-    -webkit-transform: translate3D(94px, 0, 0);
-        -ms-transform: translate3D(94px, 0, 0);
-            transform: translate3D(94px, 0, 0);
+    -webkit-transform: translate3D(-94px, 0, 0);
+        -ms-transform: translate3D(-94px, 0, 0);
+            transform: translate3D(-94px, 0, 0);
     transition: all 0.3s ease;
 }
 
@@ -933,8 +969,8 @@ body.nav-opened .nav {
 .main-nav.overlay {
     position: absolute;
     top: 0;
-    left: 0;
     right: 0;
+    left: 0;
     height: 70px;
     border: none;
     background: linear-gradient(to bottom, rgba(0,0,0,0.2) 0%,rgba(0,0,0,0) 100%);
@@ -949,7 +985,7 @@ body.nav-opened .nav {
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     color: #fff;
 }
 
@@ -958,7 +994,7 @@ body.nav-opened .nav {
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
+    font-family: "Vazir", serif;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -1012,8 +1048,8 @@ body.nav-opened .nav {
     border: #E7EEF2 1px solid;
     position: absolute;
     bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
+    right: 50%;
+    margin-right: -5px;
     background: #FFF;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
@@ -1044,7 +1080,7 @@ body.page-template .post-title {
 .post-meta {
     display: block;
     margin: 1.75rem 0 0 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
@@ -1053,8 +1089,8 @@ body.page-template .post-title {
 .author-thumb {
     width: 24px;
     height: 24px;
-    float: left;
-    margin-right: 9px;
+    float: right;
+    margin-left: 9px;
     border-radius: 100%;
 }
 
@@ -1075,9 +1111,9 @@ body.page-template .post-title {
 
 .post-date {
     display: inline-block;
-    margin-left: 8px;
-    padding-left: 12px;
-    border-left: #d5dbde 1px solid;
+    margin-right: 8px;
+    padding-right: 12px;
+    border-right: #d5dbde 1px solid;
     text-transform: uppercase;
     font-size: 1.3rem;
     white-space: nowrap;
@@ -1086,7 +1122,7 @@ body.page-template .post-title {
 .user-image {
     position: absolute;
     top: 0;
-    left: 0;
+    right: 0;
 }
 
 .user-name {
@@ -1104,9 +1140,9 @@ body.page-template .post-title {
 .publish-meta {
     position: absolute;
     top: 0;
-    right: 0;
+    left: 0;
     padding: 4.3rem 0 4rem 0;
-    text-align: right;
+    text-align: left;
 }
 
 .publish-heading {
@@ -1176,12 +1212,12 @@ body.page-template .post-title {
     max-width: 126%;
     height: auto;
     padding: 0.6em 0;
-    /* Centers an image by (1) pushing its left edge to the
+    /* Centers an image by (1) pushing its right edge to the
        center of its container and (2) shifting the entire image
        in the opposite direction by half its own width.
        Works for images that are larger than their containers. */
     position: relative;
-    left: 50%;
+    right: 50%;
     -webkit-transform: translateX(-50%); /* for Safari and iOS */
     -ms-transform: translateX(-50%); /* for IE9 */
     transform: translateX(-50%);
@@ -1243,9 +1279,9 @@ body.page-template .post-title {
     color: #111;
 }
 
-/* Create some space to the right for the share links */
+/* Create some space to the left for the share links */
 .post-footer .author {
-    margin-right: 180px;
+    margin-left: 180px;
 }
 
 .post-footer h4 a {
@@ -1257,14 +1293,14 @@ body.page-template .post-title {
     text-decoration: underline;
 }
 
-/* Drop the share links in the space to the right.
+/* Drop the share links in the space to the left.
    Doing it like this means it's easier for the author bio
    to be flexible at smaller screen sizes while the share
    links remain at a fixed width the whole time */
 .post-footer .share {
     position: absolute;
     top: 3rem;
-    right: 0;
+    left: 0;
     width: 140px;
 }
 
@@ -1334,8 +1370,8 @@ body.page-template .post-title {
     border: #E7EEF2 1px solid;
     position: absolute;
     bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
+    right: 50%;
+    margin-right: -5px;
     background: #FFF;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
@@ -1348,8 +1384,8 @@ body.page-template .post-title {
     display: block;
     position: absolute;
     top: -40px;
-    left: 50%;
-    margin-left: -40px;
+    right: 50%;
+    margin-right: -40px;
     width: 80px;
     height: 80px;
     border-radius: 100%;
@@ -1372,7 +1408,7 @@ body.page-template .post-title {
 
 .author-profile .author-image {
     position: relative;
-    left: auto;
+    right: auto;
     top: auto;
     width: 120px;
     height: 120px;
@@ -1401,7 +1437,7 @@ body.page-template .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "Merriweather", serif;
+    font-family: "Vazir", serif;
     letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
@@ -1470,9 +1506,9 @@ body.page-template .post-title {
     display: block;
     position: absolute;
     top: 0;
-    right: 0;
-    bottom: 0;
     left: 0;
+    bottom: 0;
+    right: 0;
     background: rgba(0,0,0,0.7);
     transition: all 0.5s ease;
 }
@@ -1487,7 +1523,7 @@ body.page-template .post-title {
     padding: 4px 10px 5px;
     text-transform: uppercase;
     font-size: 1.1rem;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     color: rgba(255,255,255,0.8);
     border: rgba(255,255,255,0.5) 1px solid;
     border-radius: 4px;
@@ -1531,7 +1567,7 @@ body.page-template .post-title {
 
 /* if there are two posts without covers, put a border between them */
 .read-next-story.no-cover + .read-next-story.no-cover {
-    border-left: rgba(0,0,100,0.04) 1px solid;
+    border-right: rgba(0,0,100,0.04) 1px solid;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
@@ -1541,8 +1577,8 @@ body.page-template .post-title {
 .read-next + .site-footer {
     position: absolute;
     bottom: 0;
-    left: 0;
     right: 0;
+    left: 0;
     margin: 0;
 }
 
@@ -1579,7 +1615,7 @@ body.page-template .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -1590,7 +1626,7 @@ body.page-template .post-title {
     transition: all 0.2s ease;
 }
 
-/* Push the previous/next links out to the left/right */
+/* Push the previous/next links out to the right/left */
 .older-posts,
 .newer-posts {
     position: absolute;
@@ -1603,7 +1639,7 @@ body.page-template .post-title {
 }
 
 .older-posts {
-    right: 0;
+    left: 0;
 }
 
 .page-number {
@@ -1613,7 +1649,7 @@ body.page-template .post-title {
 }
 
 .newer-posts {
-    left: 0;
+    right: 0;
 }
 
 .older-posts:hover,
@@ -1634,8 +1670,8 @@ body.page-template .post-title {
     border: #E7EEF2 1px solid;
     position: absolute;
     bottom: -5px;
-    left: 50%;
-    margin-left: -5px;
+    right: 50%;
+    margin-right: -5px;
     background: #FFF;
     border-radius: 100%;
     box-shadow: #FFF 0 0 0 5px;
@@ -1703,12 +1739,12 @@ body.page-template .post-title {
 }
 
 .gh-subscribe button {
-    margin-left: -1px;
+    margin-right: -1px;
     border-radius: 0 4px 4px 0;
 }
 
 .gh-subscribe-rss {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Vazir', sans-serif;
     font-size: 1.2rem;
     line-height: 1.4em;
 }
@@ -1721,7 +1757,7 @@ body.page-template .post-title {
     position: relative;
     margin: 8rem 0 0 0;
     padding: 1rem 15px;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Vazir", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -1740,14 +1776,14 @@ body.page-template .post-title {
 .poweredby {
     display: block;
     width: 45%;
-    float: right;
-    text-align: right;
+    float: left;
+    text-align: left;
 }
 
-.copyright {
+.copyleft {
     display: block;
     width: 45%;
-    float: left;
+    float: right;
 }
 
 
@@ -1758,7 +1794,7 @@ body.page-template .post-title {
 @media only screen and (max-width: 900px) {
 
     blockquote {
-        margin-left: 0;
+        margin-right: 0;
     }
 
     .main-header {
@@ -1810,7 +1846,7 @@ body.page-template .post-title {
     }
 
     ol, ul {
-        padding-left: 2em;
+        padding-right: 2em;
     }
 
     h1 {
@@ -1899,7 +1935,7 @@ body.page-template .post-title {
 
     .read-next-story.no-cover + .read-next-story.no-cover {
         border-top: rgba(0,0,100,0.06) 1px solid;
-        border-left: none;
+        border-right: none;
     }
 
 }
@@ -1997,8 +2033,8 @@ body.page-template .post-title {
         width: auto;
         margin-top: 2rem;
         margin-bottom: 2rem;
-        margin-left: 16px;
         margin-right: 16px;
+        margin-left: 16px;
         padding-bottom: 2rem;
         line-height: 1.65em;
     }
